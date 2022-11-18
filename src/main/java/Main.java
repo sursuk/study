@@ -11,7 +11,7 @@ public class Main {
         int currentNum = scanner.nextInt();
         System.out.println(currentNum);
 
-        for (int i = 0; i < lengthArray; i++) {
+        for (int i = 0; i < lengthArray - 1; i++) {
             int temp = scanner.nextInt();
             if(temp != currentNum) {
                 currentNum = temp;
