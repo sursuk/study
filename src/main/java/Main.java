@@ -1,28 +1,20 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
-//1110
 public class Main {
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) throws Exception {
+        BufferedReader r = new BufferedReader(new InputStreamReader(System.in));
 
-        int lengthArray = scanner.nextInt();
-
-        if (lengthArray <= 0) {
-            return;
-        }
-
-        lengthArray--;
-        String currentNum = scanner.nextLine();
-        System.out.println(currentNum);
-
-        for ( ;lengthArray != 0; lengthArray--) {
-            String temp = scanner.nextLine();
-            if(temp != currentNum) {
-                currentNum = temp;
-                System.out.println(currentNum);
-
+        int n = Integer.parseInt(r.readLine());
+        String lastUniqueElement = "";
+        for(int i = 0; i < n; i++) {
+            String elem = r.readLine();
+            if (!elem.equals(lastUniqueElement)){
+                lastUniqueElement = elem;
+                System.out.println(lastUniqueElement);
             }
         }
     }
+
 }
